@@ -8,7 +8,7 @@ import pizza4 from './assets/pizza4.jpeg';
 function Card(props) {
 
     const {
-        number,
+        handleClick,
 
     } = props;
 
@@ -40,32 +40,33 @@ function Card(props) {
 return (
 <>
 <div className="cardContainer">
-<div id={randomArray[0]} className="card">
+<div id={randomArray[0]} className="card" onClick={handleClick}>
     <p>{randomArray[0]}</p>
     <img className="img" src={picArray[randomArray[0]]}></img>
     </div>
 
-    <div id={randomArray[1]} className="card">
+    <div id={randomArray[1]} className="card" onClick={handleClick}>
     <p>{randomArray[1]}</p>
     <img className="img" src={picArray[randomArray[1]]}></img>
     </div>
 
-    <div id={randomArray[2]} className="card">
+    <div id={randomArray[2]} className="card" onClick={handleClick}>
     <p>{randomArray[2]}</p>
     <img className="img" src={picArray[randomArray[2]]}></img>
+    
     </div>
 
-    <div id={randomArray[3]} className="card">
+    <div id={randomArray[3]} className="card" onClick={handleClick}>
     <p>{randomArray[3]}</p>
     <img className="img" src={picArray[randomArray[3]]}></img>
     </div>
 
-    <div id={randomArray[4]} className="card">
+    <div id={randomArray[4]} className="card" onClick={handleClick}>
     <p>{randomArray[4]}</p>
     <img className="img" src={picArray[randomArray[4]]}></img>
     </div>
 
-    <div id={randomArray[5]} className="card">
+    <div id={randomArray[5]} className="card" onClick={handleClick}>
     <p>{randomArray[5]}</p>
     <img className="img" src={picArray[randomArray[5]]}></img>
     </div>
