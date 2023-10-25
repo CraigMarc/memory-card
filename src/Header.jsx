@@ -6,24 +6,32 @@ function Header (props) {
 
     } = props;
 
-    if (clickedOn.length == 6) {
-        return (
-            <h1>You Win</h1>
-        )
-    }
+    const renderMessage = () => {
+       if (clickedOn.length == 6) {
+            return (
+                <h1>You Win</h1>  
+            )
+        }
 
-    if (loose == "true") {
-        return (
-            <h1>You Loose</h1>
-        )
-    }
+        if (loose == "true") {
+            return (
+                <h1>You Loose</h1> 
+            )
+        }
+
+      };
+
+   
+
+   
 
     return (
-        <>
         
+        <div>
+        {renderMessage()}
         <p>Number of Clicks {clickedOn.length}</p>
+        </div>
         
-        </>
 
 
     )
