@@ -57,78 +57,7 @@ function Card(props) {
     }
 
     let randomArray = shuffle()
-    /*
-        return (
-            <>
-                <div className="cardContainer">
-                    <div disabled={disable} id={randomArray[0]} className="card" onClick={handleClick}>
-                       
-                        <img className="img" src={picArray[randomArray[0]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[1]} className="card" onClick={handleClick}>
-                       
-                        <img className="img" src={picArray[randomArray[1]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[2]} className="card" onClick={handleClick}>
-                        
-                        <img className="img" src={picArray[randomArray[2]]}></img>
-    
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[3]} className="card" onClick={handleClick}>
-                                           
-                    <img className="img" src={picArray[randomArray[3]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[4]} className="card" onClick={handleClick}>
-                       
-                        <img className="img" src={picArray[randomArray[4]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[5]} className="card" onClick={handleClick}>
-                       
-                        <img className="img" src={picArray[randomArray[5]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[5]} className="card" onClick={handleClick}>
-                        
-                        <img className="img" src={picArray[randomArray[6]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[7]} className="card" onClick={handleClick}>
-                        
-                        <img className="img" src={picArray[randomArray[7]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[8]} className="card" onClick={handleClick}>
-                       
-                        <img className="img" src={picArray[randomArray[8]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[9]} className="card" onClick={handleClick}>
-                       
-                        <img className="img" src={picArray[randomArray[9]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[10]} className="card" onClick={handleClick}>
-                       
-                        <img className="img" src={picArray[randomArray[10]]}></img>
-                    </div>
-    
-                    <div disabled={disable} id={randomArray[11]} className="card" onClick={handleClick}>
-                        
-                        <img className="img" src={picArray[randomArray[11]]}></img>
-                    </div>
-    
-                </div >
-               
-            </>
-    
-        )
-    */
-
+   
     return (
         <>
             <div className="cardContainer">
