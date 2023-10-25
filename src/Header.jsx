@@ -3,6 +3,7 @@ function Header (props) {
     const {
         clickedOn,
         loose,
+        bestGame,
 
     } = props;
 
@@ -30,6 +31,7 @@ function Header (props) {
         <div>
         {renderMessage()}
         <p>Number of Clicks {clickedOn.length}</p>
+        <p>Best Game {bestGame}</p>
         </div>
         
 

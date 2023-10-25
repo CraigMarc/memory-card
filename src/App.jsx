@@ -10,23 +10,26 @@ function App() {
 
   const [clickedOn, setClickedOn] = useState([])
   const [loose, setLoose] = useState()
+  const [bestGame, setBestGame] = useState()
 
   const handleClick = (e) => {
-    
-    if (clickedOn.indexOf(e.currentTarget.id) != -1) {
+    let card = e.currentTarget.id
+    if (clickedOn.indexOf(card) != -1 && clickedOn.length > 0) {
       setLoose("true")
     }
-
-    const newClick = [...clickedOn, e.currentTarget.id]
-    setClickedOn(newClick)
-
+    
+    //const newClick = [...clickedOn, e.currentTarget.id]
+    //setClickedOn([...clickedOn, e.currentTarget.id])
+       if (clickedOn.indexOf(card) == -1 || clickedOn.length == 0) {
+      setClickedOn((clickedOn) => ([...clickedOn, card]));
+    }
 
   }
 
 
   const handleStart = () => {
-    
-    
+
+    setBestGame(clickedOn.length)
     setClickedOn([])
     setLoose()
 
@@ -43,6 +46,7 @@ function App() {
       <Header
         clickedOn={clickedOn}
         loose={loose}
+        bestGame={bestGame}
       />
 
       <Card
@@ -51,10 +55,10 @@ function App() {
         loose={loose}
       />
 
-      <NewGame 
-      clickedOn={clickedOn}
-      loose={loose}
-      handleStart={handleStart}
+      <NewGame
+        clickedOn={clickedOn}
+        loose={loose}
+        handleStart={handleStart}
       />
 
     </>
