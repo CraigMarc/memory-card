@@ -17,7 +17,7 @@ function App() {
 
   //make api call
 
-  const picUrl = "https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=birds&image_type=photo"
+  const picUrl = "https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=mountains&image_type=photo"
 
   const fetchInfo = async () => {
     return fetch(picUrl)
