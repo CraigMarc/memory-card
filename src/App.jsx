@@ -22,7 +22,6 @@ function App() {
       //return fetch(picUrl)
       const res = await fetch("https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=mountains&image_type=photo")
         .then((res) => res.json())
-
         .then((d) => setData(d))
         .then(() => setError())
     }
