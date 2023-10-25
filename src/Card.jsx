@@ -11,10 +11,16 @@ function Card(props) {
         handleClick,
         clickedOn,
         loose,
+        data,
 
     } = props;
 
     let picArray = [map, pizza1, pizza, pizza2, pizza3, pizza4]
+
+    //console.log(data)
+    console.log(data.hits)
+
+    let pixImage = data.hits[0].previewURL
 
     //disable click
     let disable = false
@@ -78,6 +84,7 @@ function Card(props) {
                 <img className="img" src={picArray[randomArray[5]]}></img>
             </div>
         </div >
+       <img src={pixImage}></img>
 </>
 
 )
