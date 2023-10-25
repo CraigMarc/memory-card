@@ -43,6 +43,8 @@ function App() {
 
       <Card
         handleClick={handleClick}
+        clickedOn={clickedOn}
+        loose={loose}
       />
 
       <NewGame 
