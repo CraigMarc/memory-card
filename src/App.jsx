@@ -14,17 +14,25 @@ function App() {
   const [loose, setLoose] = useState()
   const [bestGame, setBestGame] = useState(0)
   const [data, setData] = useState({ hits: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] })
+  const [error, setError] = useState()
 
-  //make api call
-
-  const picUrl = "https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=mountains&image_type=photo"
 
   const fetchInfo = async () => {
-    return fetch(picUrl)
-      .then((res) => res.json())
-      .then((d) => setData(d))
-  }
+    try {
+      //return fetch(picUrl)
+      const res = await fetch("https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=mountains&image_type=photo")
+        .then((res) => res.json())
 
+        .then((d) => setData(d))
+        .then(() => setError())
+    }
+    catch (error) {
+      console.error("There has been a problem with your fetch operation:", error);
+      //add error message to dom
+      setError("true")
+    }
+  }
+  
 
   useEffect(() => {
     fetchInfo();
@@ -68,6 +76,7 @@ function App() {
         clickedOn={clickedOn}
         loose={loose}
         bestGame={bestGame}
+        error={error}
       />
 
       <NewGame
