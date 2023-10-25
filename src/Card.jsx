@@ -22,6 +22,7 @@ function Card(props) {
     //console.log(data.hits[0])
 
     //pic array from api
+    /*
     let picArray = [data.hits[0].previewURL,
     data.hits[1].webformatURL,
     data.hits[2].webformatURL,
@@ -34,7 +35,13 @@ function Card(props) {
     data.hits[9].webformatURL, 
     data.hits[10].webformatURL, 
     data.hits[11].webformatURL,
-    data.hits[12].webformatURL]
+    data.hits[12].webformatURL]*/
+
+    let picArray = []
+
+    for (let i=0; i<=12; i++){
+        picArray.push(data.hits[i].webformatURL)
+    }
 
 
     //disable click
