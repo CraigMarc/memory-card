@@ -33,6 +33,7 @@ div[disabled] {
   padding-left: 30px;
   justify-content: center;
   padding-bottom: 10px;
+  align-content: center;
 }
 .gameInfoContainer > div > p {
   margin: 0;
