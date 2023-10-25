@@ -19,7 +19,7 @@ function Card(props) {
 
     //let picArray = [map, pizza1, pizza, pizza2, pizza3, pizza4]
 
-    console.log(data.hits[0])
+    //console.log(data.hits[0])
 
     //pic array from api
     let picArray = [data.hits[0].previewURL,

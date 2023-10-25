@@ -11,7 +11,7 @@ function NewGame(props) {
       
         return (
             <div>
-                <button onClick={handleStart}>New Game</button>
+                <button onClick={handleStart}>Play Another Round</button>
             </div>
 
 
