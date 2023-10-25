@@ -13,26 +13,26 @@ function App() {
   const [clickedOn, setClickedOn] = useState([])
   const [loose, setLoose] = useState()
   const [bestGame, setBestGame] = useState(0)
-  const [data, setData] = useState({hits:[1,2,3,4,5,6,7,8,9,10,11,12,13]})
+  const [data, setData] = useState({ hits: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] })
 
-   //make api call
-   
-   const picUrl = "https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=animals&image_type=photo"
+  //make api call
 
-   const fetchInfo = async () => { 
-     return fetch(picUrl) 
-             .then((res) => res.json()) 
-             .then((d) => setData(d)) 
-     }
-    
-     
-     useEffect(() => {
-       fetchInfo();
-     }, [])
- 
-    
+  const picUrl = "https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=birds&image_type=photo"
 
-//event handlers
+  const fetchInfo = async () => {
+    return fetch(picUrl)
+      .then((res) => res.json())
+      .then((d) => setData(d))
+  }
+
+
+  useEffect(() => {
+    fetchInfo();
+  }, [])
+
+
+
+  //event handlers
   const handleClick = (e) => {
     let card = e.currentTarget.id
     if (clickedOn.indexOf(card) != -1 && clickedOn.length > 0) {
@@ -70,6 +70,12 @@ function App() {
         bestGame={bestGame}
       />
 
+      <NewGame
+        clickedOn={clickedOn}
+        loose={loose}
+        handleStart={handleStart}
+      />
+
       <Card
         handleClick={handleClick}
         clickedOn={clickedOn}
@@ -77,11 +83,7 @@ function App() {
         data={data}
       />
 
-      <NewGame
-        clickedOn={clickedOn}
-        loose={loose}
-        handleStart={handleStart}
-      />
+
 
     </>
   )
