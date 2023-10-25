@@ -12,7 +12,7 @@ function App() {
   const [loose, setLoose] = useState()
 
   const handleClick = (e) => {
-
+    
     if (clickedOn.indexOf(e.currentTarget.id) != -1) {
       setLoose("true")
     }
@@ -21,12 +21,16 @@ function App() {
     setClickedOn(newClick)
 
 
-    console.log(clickedOn.length)
-
   }
 
 
+  const handleStart = () => {
+    
+    
+    setClickedOn([])
+    setLoose()
 
+  }
 
 
 
@@ -50,6 +54,7 @@ function App() {
       <NewGame 
       clickedOn={clickedOn}
       loose={loose}
+      handleStart={handleStart}
       />
 
     </>
