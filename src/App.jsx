@@ -16,7 +16,7 @@ function App() {
   const [data, setData] = useState({hits:[1,2,3,4,5,6,7,8,9,10,11,12,13]})
 
    //make api call
-   //const weatherUrl = "https://api.weatherapi.com/v1/forecast.json?key=53333bca513f49888a303110233008&days=3&q=red bank nj"
+   
    const picUrl = "https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=animals&image_type=photo"
 
    const fetchInfo = async () => { 

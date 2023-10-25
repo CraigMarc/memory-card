@@ -7,7 +7,7 @@ function NewGame(props) {
 
     } = props;
 
-   if (clickedOn.length == 6 || loose == "true") {
+   if (clickedOn.length == 12 || loose == "true") {
       
         return (
             <div>

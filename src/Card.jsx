@@ -36,7 +36,7 @@ function Card(props) {
 
     //disable click
     let disable = false
-    if (clickedOn.length == 6 || loose == "true") {
+    if (clickedOn.length == 12 || loose == "true") {
         disable = true
     }
     //create random array

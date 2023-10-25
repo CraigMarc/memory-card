@@ -8,7 +8,7 @@ function Header (props) {
     } = props;
 
     const renderMessage = () => {
-       if (clickedOn.length == 6) {
+       if (clickedOn.length == 12) {
             return (
                 <h1>You Win</h1>  
             )
