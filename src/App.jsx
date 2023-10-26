@@ -46,8 +46,7 @@ function App() {
       setLoose("true")
     }
 
-    //const newClick = [...clickedOn, e.currentTarget.id]
-    //setClickedOn([...clickedOn, e.currentTarget.id])
+   
     if (clickedOn.indexOf(card) == -1 || clickedOn.length == 0) {
       setClickedOn((clickedOn) => ([...clickedOn, card]));
     }
