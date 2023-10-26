@@ -3,6 +3,12 @@
   width: 330px;
   border: solid;
 }
+/*
+@media only screen and (max-width: 550px) {
+  .cardContainer {
+    width: 300px;
+   
+  }}*/
 
 .cardContainer {
   display: flex;
@@ -10,6 +16,12 @@
   gap: 20px;
   justify-content: center;
 }
+
+@media only screen and (max-width: 300px) {
+  .cardContainer {
+    width: 280px;
+   
+  }}
 
 .img {
   height: 212px;
