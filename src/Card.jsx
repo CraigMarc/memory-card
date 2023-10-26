@@ -65,7 +65,7 @@ function Card(props) {
 
                     return (
                         <div key={index} disabled={disable} id={index} className="card" onClick={handleClick}>
-
+                           
                             <img className="img" src={picArray[index]}></img>
                         </div>
                     )
