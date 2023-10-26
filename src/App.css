@@ -3,6 +3,12 @@
   width: 330px;
   border: solid;
 }
+
+@media only screen and (max-width: 350px) {
+  .card {
+    width: 290px;
+   
+  }}
 /*
 @media only screen and (max-width: 550px) {
   .cardContainer {
@@ -17,17 +23,19 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 300px) {
-  .cardContainer {
-    width: 280px;
-   
-  }}
+
 
 .img {
   height: 212px;
   width: 320px;
   padding: 5px;
 }
+
+@media only screen and (max-width: 350px) {
+  .img {
+    width: 280px;
+   
+  }}
 
 div[disabled] {
   pointer-events: none;
