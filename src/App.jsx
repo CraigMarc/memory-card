@@ -6,6 +6,7 @@ import { Card } from './Card'
 import { Header } from './Header'
 import { NewGame } from './NewGame'
 import { FindPics } from './FindPics'
+import { Loading } from './Loading'
 
 function App() {
 
@@ -18,27 +19,30 @@ function App() {
   const [error, setError] = useState()
   const [findPicsState, setFindPicsState] = useState(true)
   const [searchResult, setSearchResult] = useState("mountains")
+  const [loading, setLoading] = useState()
 
   const fetchInfo = async (pics) => {
+    setLoading(true)
     if (pics == undefined) {
       pics = "mountains"
     }
     try {
       //return fetch(picUrl)
       const res = await fetch("https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=" + pics + "&image_type=photo")
-       
-        const picData = await res.json();
-        let picArr = picData.hits
-        if (picArr.length > 12) {
-          setData(picData)
-          setError()
-        }
 
-        else{
-          setError("true")
-          
-        }
-        
+      const picData = await res.json();
+      let picArr = picData.hits
+      if (picArr.length > 12) {
+        setData(picData)
+        setError()
+        setLoading(false)
+      }
+
+      else {
+        setError("true")
+
+      }
+
     }
 
     catch (error) {
@@ -72,9 +76,9 @@ function App() {
 
 
   const handleStart = () => {
-    
-    if (clickedOn.length > bestGame ){
-    setBestGame(clickedOn.length)
+
+    if (clickedOn.length > bestGame) {
+      setBestGame(clickedOn.length)
     }
     setClickedOn([])
     setLoose()
@@ -100,9 +104,14 @@ function App() {
     allInputs.forEach(singleInput => singleInput.value = '');
 
   }
- 
 
-  
+  if (loading == true) {
+
+    <Loading/>
+  }
+
+
+
   if (findPicsState == false && error != "true") {
 
     return (
@@ -132,19 +141,19 @@ function App() {
       </>
     )
   }
-  
 
-    return (
-      <>
-        <FindPics
-          handlePicSubmit={handlePicSubmit}
-          data={data}
-          error={error}
-        />
-  
-      </>
-    )
-   
+
+  return (
+    <>
+      <FindPics
+        handlePicSubmit={handlePicSubmit}
+        data={data}
+        error={error}
+      />
+
+    </>
+  )
+
 
 }
 

@@ -22,7 +22,7 @@ function FindPics(props) {
     return (
 
         <div className="findPicContainer">
-            
+            <div>
             <h1>Memory Game</h1>
             <h3>Fill in the form with the type of pictures you want </h3>
             <h3>to display on the cards in the game</h3>
@@ -44,6 +44,7 @@ function FindPics(props) {
                 </div>
             </form>
         {renderError()}
+        </div>
         </div>
     )
 
