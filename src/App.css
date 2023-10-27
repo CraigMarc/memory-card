@@ -98,3 +98,23 @@ input[type=submit]:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.submitContainer {
+  padding-top: 20px;
+}
+
+input {
+  display: block;
+  border-radius: 5px;
+  border: none;
+  font-size: 23px;
+
+}
+
+h3 {
+  margin: 0;
+}
+
+form {
+  padding-top: 20px;
+}
