@@ -22,8 +22,8 @@ function Header(props) {
         }
 
     };
-
-    
+    let search = searchResult
+    let upperCase = search.charAt(0).toUpperCase() + search.slice(1);
 
 
 
@@ -31,11 +31,11 @@ function Header(props) {
 
         <div>
             <div className="headerContainer">
-            <h1>{searchResult} Memory Game</h1>
-            <p>Get points for clicking on an image but don't click on the same image more then once.</p>
-           
+                <h1>{upperCase} Memory Game</h1>
+                <p>Get points for clicking on an image but don't click on the same image more then once.</p>
+
             </div>
-            
+
 
             <div className="gameInfoContainer">
                 <div>

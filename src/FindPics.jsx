@@ -24,7 +24,8 @@ function FindPics(props) {
         <div className="findPicContainer">
             
             <h1>Memory Game</h1>
-            <h3>Fill in the form with the type of pictures you want to play the game</h3>
+            <h3>Fill in the form with the type of pictures you want </h3>
+            <h3>to display on the cards in the game</h3>
             <h3>example: mountains, cartoons animals or anything really</h3>
             <form onSubmit={handlePicSubmit}>
                 <label>
