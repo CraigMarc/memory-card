@@ -28,7 +28,7 @@ function FindPics(props) {
             <h3>example: mountains, cartoons animals or anything really</h3>
             <form onSubmit={handlePicSubmit}>
                 <label>
-                    Pictures {' '}
+                    {' '}
                     <input
                         id="pictures"
                         type="text"

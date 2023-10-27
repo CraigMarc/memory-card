@@ -34,7 +34,10 @@ function App() {
           setError()
         }
 
-        else{setError("true")}
+        else{
+          setError("true")
+          
+        }
         
     }
 
@@ -69,8 +72,10 @@ function App() {
 
 
   const handleStart = () => {
-
+    
+    if (clickedOn.length > bestGame ){
     setBestGame(clickedOn.length)
+    }
     setClickedOn([])
     setLoose()
     setFindPicsState(true)
