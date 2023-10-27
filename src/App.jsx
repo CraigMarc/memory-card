@@ -26,14 +26,24 @@ function App() {
     try {
       //return fetch(picUrl)
       const res = await fetch("https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=" + pics + "&image_type=photo")
-        .then((res) => res.json())
-        .then((d) => setData(d))
-        .then(() => setError())
+        //.then((res) => res.json())
+        //.then((d) => setData(d))
+        const picData = await res.json();
+        let picArr = picData.hits
+        if (picArr.length > 12) {
+          setData(picData)
+          setError()
+        }
+
+        else{setError("true")}
+        
     }
+
     catch (error) {
       console.error("There has been a problem with your fetch operation:", error);
       //add error message to dom
       setError("true")
+      //setFindPicsState(true)
     }
 
   }
@@ -92,70 +102,69 @@ function App() {
     event.preventDefault();
     const dataSubmit = Object.fromEntries(new FormData(event.target).entries());
     setFindPicsState(false)
+
+    setSearchResult(dataSubmit.pictures)
+    fetchInfo(dataSubmit.pictures)
+
+    clearAllInputs()
+  }
+
+  function clearAllInputs() {
+    let allInputs = document.querySelectorAll('input');
+
+    allInputs.forEach(singleInput => singleInput.value = '');
+
+  }
+ 
+
   
-  setSearchResult(dataSubmit.pictures)
-  fetchInfo(dataSubmit.pictures)
+  if (findPicsState == false && error != "true") {
 
-  clearAllInputs()
-}
+    return (
+      <>
+        <Header
+          clickedOn={clickedOn}
+          loose={loose}
+          bestGame={bestGame}
+          error={error}
+          searchResult={searchResult}
+        />
 
-function clearAllInputs() {
-  let allInputs = document.querySelectorAll('input');
+        <NewGame
+          clickedOn={clickedOn}
+          loose={loose}
+          handleStart={handleStart}
+        />
 
-  allInputs.forEach(singleInput => singleInput.value = '');
-
-}
-
-
-
-
-//render
-
-if (findPicsState == false) {
-
-  return (
-    <>
-      <Header
-        clickedOn={clickedOn}
-        loose={loose}
-        bestGame={bestGame}
-        error={error}
-        searchResult={searchResult}
-      />
-
-      <NewGame
-        clickedOn={clickedOn}
-        loose={loose}
-        handleStart={handleStart}
-      />
-
-      <Card
-        handleClick={handleClick}
-        clickedOn={clickedOn}
-        loose={loose}
-        data={data}
-      />
+        <Card
+          handleClick={handleClick}
+          clickedOn={clickedOn}
+          loose={loose}
+          data={data}
+        />
 
 
 
-    </>
-  )
-}
+      </>
+    )
+  }
+  
 
-if (findPicsState == true) {
-  return (
-    <>
-      <FindPics
-        handlePicSubmit={handlePicSubmit}
-        data={data}
-      />
-
-    </>
-  )
+    return (
+      <>
+        <FindPics
+          handlePicSubmit={handlePicSubmit}
+          data={data}
+          error={error}
+        />
+  
+      </>
+    )
+   
 
 }
 
 
-}
+
 
 export default App

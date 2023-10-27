@@ -24,14 +24,7 @@ function Header(props) {
 
     };
 
-    const renderError = () => {
-        if (error == "true") {
-            return (
-                <h2>Pictures did not load</h2>
-            )
-        }
-
-    }
+    
 
 
 
@@ -41,7 +34,7 @@ function Header(props) {
             <div className="headerContainer">
             <h1>{searchResult} Memories</h1>
             <p>Get points for clicking on an image but don't click on the same image more then once.</p>
-            {renderError()}
+           
             </div>
             
 
