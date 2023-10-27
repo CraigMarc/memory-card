@@ -118,3 +118,11 @@ h3 {
 form {
   padding-top: 20px;
 }
+
+.example {
+ padding-top: 10px;
+}
+
+.findTitle {
+  text-align: center;
+}
