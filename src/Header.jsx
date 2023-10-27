@@ -5,6 +5,7 @@ function Header(props) {
         loose,
         bestGame,
         error,
+        searchResult,
 
     } = props;
 
@@ -38,7 +39,7 @@ function Header(props) {
 
         <div>
             <div className="headerContainer">
-            <h1>Mountain Memories</h1>
+            <h1>{searchResult} Memories</h1>
             <p>Get points for clicking on an image but don't click on the same image more then once.</p>
             {renderError()}
             </div>
