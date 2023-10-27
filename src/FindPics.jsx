@@ -24,7 +24,7 @@ function FindPics(props) {
         <div>
             <h1 className="findTitle">Memory Game</h1>
             <div className="findPicContainer">
-                <div>
+                <div className="picContainer">
 
                     <h3>Fill in the form with the type of pictures you want to display on the cards in the game</h3>
                     <h3 className="example">example: mountains, cartoon characters, animals or anything really</h3>

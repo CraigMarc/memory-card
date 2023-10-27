@@ -73,7 +73,8 @@ div[disabled] {
 .findPicContainer {
   display: flex;
   justify-content: center;
-
+  
+ 
 }
 
 input[type=submit] {
@@ -112,7 +113,7 @@ input {
 }
 
 h3 {
-  margin: 0;
+ margin: 0;
 }
 
 form {
@@ -126,3 +127,16 @@ form {
 .findTitle {
   text-align: center;
 }
+
+.picContainer {
+  padding-left: 25px;
+  padding-right: 15px;
+}
+
+@media only screen and (max-width: 350px) {
+  .picContainer {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+   
+  }}
