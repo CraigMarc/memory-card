@@ -111,6 +111,12 @@ input {
   font-size: 23px;
 
 }
+@media only screen and (max-width: 350px) {
+  input {
+   font-size: 15px;
+  }
+   
+  }
 
 h3 {
  margin: 0;
@@ -135,8 +141,8 @@ form {
 
 @media only screen and (max-width: 350px) {
   .picContainer {
-    padding-left: 25px;
-    padding-right: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
   }
    
-  }}
+  }
