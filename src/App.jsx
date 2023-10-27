@@ -26,8 +26,7 @@ function App() {
     try {
       //return fetch(picUrl)
       const res = await fetch("https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q=" + pics + "&image_type=photo")
-        //.then((res) => res.json())
-        //.then((d) => setData(d))
+       
         const picData = await res.json();
         let picArr = picData.hits
         if (picArr.length > 12) {
@@ -52,25 +51,6 @@ function App() {
   useEffect(() => {
     fetchInfo();
   }, [])
-
-  //other fetch info 
-  /*
-    async function fetchInfo (pics)  {
-      if (pics == undefined) {
-          pics = "mountains"
-      }
-      const picUrl = "https://pixabay.com/api/?key=40272701-d1f0bb34d10cfd0d1c847f1fd&q="+ pics +"&image_type=photo"
-      return fetch(picUrl)
-          .then((res) => res.json())
-          .then((d) => setData(d))
-  }
-  
-  
-  useEffect(() => {
-      fetchInfo();
-  }, [])
-  */
-
 
 
   //event handlers
@@ -126,7 +106,6 @@ function App() {
           clickedOn={clickedOn}
           loose={loose}
           bestGame={bestGame}
-          error={error}
           searchResult={searchResult}
         />
 

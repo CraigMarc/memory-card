@@ -4,7 +4,6 @@ function Header(props) {
         clickedOn,
         loose,
         bestGame,
-        error,
         searchResult,
 
     } = props;
